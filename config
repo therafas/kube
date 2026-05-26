@@ -109,6 +109,23 @@ users:
         env:
           - name: AWS_PROFILE
             value: dsl
+  - name: arn:aws:eks:us-east-1:558890216641:cluster/dev-eks
+    user:
+      exec:
+        apiVersion: client.authentication.k8s.io/v1beta1
+        args:
+          - '--region'
+          - us-east-1
+          - eks
+          - get-token
+          - '--cluster-name'
+          - dsl-eks
+          - '--output'
+          - json
+        command: aws
+        env:
+          - name: AWS_PROFILE
+            value: a9t
   - name: docker-desktop
     user:
       client-certificate-data: >-
@@ -151,6 +168,12 @@ clusters:
         LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJWVhPMVhvdkgrTjB3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TmpBeU1UY3lNelE0TUROYUZ3MHpOakF5TVRVeU16VXpNRE5hTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUURRdGFoMk4xN3FjR1BwdDlSM3Y4QzlnbWVuTkFzYkp1SXBDdWszMlRENWhNd3lnQTdPQ3N4M2JNKzAKMVFsWVNZQlU2d0EwSDVhU2lzVU4xeW9Sc0o3eWhKWDRzOWU4ZFF4K09mSVVrd3QwTTJ4UU41Lyt0ZFJ4TExYWApwaGk0dSs4N2ZKWmJGeXBxZTdYd2xWWkhIS2VPZ3RxMEFMbU9LOHZqN2tSRW5Zclc0ZU9xenBVM2hCamVlTXg1ClROb1JWeGhYWEtBK1hYQ2syMVVPM3BPaTVZaG1lR2pYclkwM1Aza05keFdpVXVCYlRiMnZyN1RIYkEzUkxNMUwKVGJvMmhxNjJTajEwaTc5aXE5UmJNS3lveSt4L0ZuUHc4b21WS3cydUZrRTBxRU9LVk9BMjViK0o4Q3V1VkpTMApDVkZWQXVUSE9pQTlKNVIxRGZpRXY2MEU5eUluQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUbHdNeHBPbU5vcUp4L2JVeDFoa1hLM1ROK2d6QVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQ253c3k0L0YwRApWU1F3dHBhNFJqK2hXd2piZ2lWVWZKWHl0MlkwbmRUS0R4NndlZ0JFUVpPNDl4MVBMbUh4U3gvdTE4VUVDT2ZFCmtNMk5xZUhpcHVrSllPbzNab2VWblhXTFh0Vm42VHJSa21qMWp1TmJNWlR0SzFrNU0vays3ZmN1ZC83T2ZiRE4KYUZwTkJRTk5jdGJRZFFoSEtJT2QvM2YzU3NiWlMzcVpwRlVwVmdZUzdBSi9ob2F1ZWRBWVl4eERwT1BKUjgyQwpuK2xjcTZvSHp6T0svVWx0WjhTSUJFUE5GNTl6YktkcU1hczNMVm9MMHgweG1kUWkyclNUeG9TYTVPOWJHd3RtCnpmbjFWbGtrWlN0enBMUzhNZ2dxSWk3VU1PbUNEdXpiYzZ1USt5LzE0UEVCUmd2YzNiS2VYbWMyUmlCT0ViaVQKZWpKMUswbFBxRWJVCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
       server: https://35A5BBC0EB633112006746455ABEF698.sk1.us-east-1.eks.amazonaws.com
     name: arn:aws:eks:us-east-1:728286906583:cluster/dsl-eks
+  - cluster:
+      certificate-authority-data: >-
+        LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURCVENDQWUyZ0F3SUJBZ0lJVzFReFFrMFVNZUV3RFFZSktvWklodmNOQVFFTEJRQXdGVEVUTUJFR0ExVUUKQXhNS2EzVmlaWEp1WlhSbGN6QWVGdzB5TlRFd01URXhPREE0TXpKYUZ3MHpOVEV3TURreE9ERXpNekphTUJVeApFekFSQmdOVkJBTVRDbXQxWW1WeWJtVjBaWE13Z2dFaU1BMEdDU3FHU0liM0RRRUJBUVVBQTRJQkR3QXdnZ0VLCkFvSUJBUUNyaFNzZ2hjK2FwNlpVSjhBY1dMVXRrT1ZPODZBRFU2SXAzRzZaWlVxYi84c0RSTWcxQWFqVHZQNmEKb3QzQVU1ODJvYUkydGR6R3hQUjFqMGxNL1AxY2hxdjYyVjJpbjBTc1B5c0czVHl6N0F1a0tGWnlOZDNYbC9uMQpETW1JUEphd3pRdTNIWk1GbTlsRDNCaFVaaGV4N2JGSk1CZk5NbkZnalB0NDU5Si9jV1hqbko1c2Ixbk95ZzRVCkx2OGY2VkRHMEZGSFpjZUZLY29uM2lPL1AyQURxMlhwbDRhSGhBUFRuRWQ1N01ydENsV0JqVEVOM1FXa3RnY0UKbG9SSVpLZzdTMk5aK0ZSejd0bjFmTFdFd2tYaXNvTFlUaUVmM1lLcEFpNE14cEd5UHJLeE5mWmZmT2pzVjIwaQpqT1FWeWExeXhXUWx2RnpES2UyYkZlMG1vUzVWQWdNQkFBR2pXVEJYTUE0R0ExVWREd0VCL3dRRUF3SUNwREFQCkJnTlZIUk1CQWY4RUJUQURBUUgvTUIwR0ExVWREZ1FXQkJUSExaQzRSako5Mm9yU3VsMkRXaC9IK2FTVmVqQVYKQmdOVkhSRUVEakFNZ2dwcmRXSmxjbTVsZEdWek1BMEdDU3FHU0liM0RRRUJDd1VBQTRJQkFRQUZHV21FQW8xbgpGY2ZPVW9iS1pQZVd1Ry9UWkJwLytuU1hHVHBpcmxmY0k4REc2NitMVGpSNTZLd09MNFlLeWUzYWdnUVB1UkhhCnI4VkdoeUE2Z3BSaDYwWVZNVDRsbjhpV2p0dit5M1hnN1VJbHNHWDdFVms3ZHpOaHFhYzJBeHNWM0dJNW53Z20KcUw4Zk9FSDBFYzBTRkVNK0hHNTZHSVdIU3dLSG9hRlkvM1RJQlFyZEVnZ3BTNnBrZVpqY1Q2aGh2ZDlyR0J2TgpLb3FkTUY3SXJUdFQxMVNwVzdUOHlxK1dveG9PaWRlWjRwWHdqQnVzWGtRRWI5OXBKM2tMWExDM21INWtQczQ1CkR3dzNEQmc2NEtsWEd3V0x6Y0MreGNXWHVxeXIvbTk3WEwzNDd5N2w5eGk0ZFJLUzk4VFBTbkVNUTN5RU5iQWYKemNQWi9ldGQ3SHJjCi0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K
+      server: https://3FBC6FFED32C02A6CC42A0D7006C0F80.gr7.us-east-1.eks.amazonaws.com
+    name: arn:aws:eks:us-east-1:558890216641:cluster/dev-eks
+
 contexts:
   - context:
       cluster: arn:aws:eks:us-east-1:080287095596:cluster/eks-jzz-hml
@@ -179,15 +202,11 @@ contexts:
   - context:
       cluster: arn:aws:eks:us-east-1:728286906583:cluster/dsl-eks
       user: arn:aws:eks:us-east-1:728286906583:cluster/dsl-eks
-    name: AWS-dsl
+    name: DSL-PRD-dsl-eks
   - context:
-      cluster: arn:aws:eks:us-east-1:728286906583:cluster/dsl-eks
-      user: arn:aws:eks:us-east-1:728286906583:cluster/dsl-eks
-    name: arn:aws:eks:us-east-1:728286906583:cluster/dsl-eks
-  - context:
-      cluster: arn:aws:eks:us-east-1:990460083466:cluster/jzz-prod-eks
-      user: arn:aws:eks:us-east-1:990460083466:cluster/jzz-prod-eks
-    name: arn:aws:eks:us-east-1:990460083466:cluster/jzz-prod-eks
+      cluster: arn:aws:eks:us-east-1:558890216641:cluster/dev-eks
+      user: arn:aws:eks:us-east-1:558890216641:cluster/dev-eks
+    name: A9T-DEV-dev-eks
 apiVersion: v1
 kind: Config
 preferences: {}
